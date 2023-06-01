@@ -18,7 +18,7 @@ body {
     grid-template-columns: repeat(60, 1fr);
     grid-template-rows: repeat(60, 1fr);
     margin: 2.5vh;
-    margin-left: 33vh;
+    margin-left: 24vh;
 }
 
 #control-panel {
