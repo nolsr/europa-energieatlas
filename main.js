@@ -1,6 +1,5 @@
 const selected = {};
 
-
 function generateMapNodes() {
     const map = document.getElementById('map-container');
     for (let i = 0; i < 60 ** 2; i++) {
@@ -15,7 +14,7 @@ function generateMapNodes() {
 function exportMap() {
     const map = document.getElementById('map-container');
     map.childNodes.forEach((n, i) => {
-        if (n.classList.contains('capital')) {
+        if (n.childNodes[0]?.classList.contains('capital')) {
             selected[i] = true;
         }
     });
@@ -23,16 +22,24 @@ function exportMap() {
 }
 
 function loadExport() {
+    // mit require(fs) vielleicht schneller
     fetch('./assets/map.json')
         .then((response) => response.json())
-        .then((json) => {
-            const map = document.getElementById('map-container');
-            Object.keys(json).forEach((index) => {
-                map.childNodes[index].classList.add('active');
-                const circle = document.createElement('div');
-                circle.classList.add('circle');
-                map.childNodes[index].appendChild(circle);
-            });
+        .then((mapJson) => {
+            fetch('./assets/capitals.json')
+                .then(response => response.json())
+                .then(capitalJson => {
+                    const map = document.getElementById('map-container');
+                    Object.keys(mapJson).forEach((index) => {
+                        map.childNodes[index].classList.add('active');
+                        const circle = document.createElement('div');
+                        circle.classList.add('circle');
+                        map.childNodes[index].appendChild(circle);
+                    });
+                    Object.keys(capitalJson).forEach(index => {
+                        map.childNodes[index].childNodes[0].classList.add('capital');
+                    })
+                })
         });
 }
 
