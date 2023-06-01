@@ -1,15 +1,52 @@
 body {
     background-color: #160c38;
+    margin: 0;
+    padding: 0;
 }
 
-.logo {
+#logo {
+    position: absolute;
+    top: 8vh;
+    left: 12vh;
+    width: 30vh;
+}
+
+#map-container {
+    height: 95vh;
+    width: 95vh;
+    display: grid;
+    grid-template-columns: repeat(60, 1fr);
+    grid-template-rows: repeat(60, 1fr);
+    margin: 2.5vh;
+    margin-left: 33vh;
+}
+
+#control-panel {
 
 }
 
-.map-container {
-
+#bild {
+    position: absolute;
+    top: -1.5vh;
+    height: 100vh;
+    left: 30vh;
+    opacity: 0.3;
 }
 
-.control-panel {
-    
+.node {
+    /* margin: 4px; */
+    margin: 0.5px;
+    flex: 1;
+    background-color: #E72061;
+    opacity: 0.03;
+    border-radius: 100%;
+}
+
+.node:hover {
+    opacity: 0.5;
+}
+
+.active {
+    background-color: black;
+    opacity: 0.5 !important;
 }
