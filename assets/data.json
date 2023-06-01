@@ -1,0 +1,886 @@
+{
+    "austria": {
+        "2011": {
+            "oil": 0.51,
+            "gas": 0.33,
+            "coal": 0.15,
+            "nuclear": 0,
+            "water": 0.34,
+            "renewable": 0.1
+        },
+        "2016": {
+            "oil": 0.52,
+            "gas": 0.3,
+            "coal": 0.13,
+            "nuclear": 0,
+            "water": 0.39,
+            "renewable": 0.14
+        },
+        "2021": {
+            "oil": 0.49,
+            "gas": 0.32,
+            "coal": 0.11,
+            "nuclear": 0,
+            "water": 0.4,
+            "renewable": 0.15
+        }
+    },
+    "belgium": {
+        "2011": {
+            "oil": 1.29,
+            "gas": 0.59,
+            "coal": 0.15,
+            "nuclear": 0.46,
+            "water": -1,
+            "renewable": 0.1
+        },
+        "2016": {
+            "oil": 1.32,
+            "gas": 0.58,
+            "coal": 0.13,
+            "nuclear": 0.4,
+            "water": -1,
+            "renewable": 0.16
+        },
+        "2021": {
+            "oil": 1.3,
+            "gas": 0.61,
+            "coal": 0.1,
+            "nuclear": 0.46,
+            "water": -1,
+            "renewable": 0.25
+        }
+    },
+    "bulgaria": {
+        "2011": {
+            "oil": 0.16,
+            "gas": 0.11,
+            "coal": 0.34,
+            "nuclear": 0.16,
+            "water": 0.03,
+            "renewable": 0.01
+        },
+        "2016": {
+            "oil": 0.19,
+            "gas": 0.11,
+            "coal": 0.24,
+            "nuclear": 0.15,
+            "water": 0.04,
+            "renewable": 0.04
+        },
+        "2021": {
+            "oil": 0.2,
+            "gas": 0.12,
+            "coal": 0.22,
+            "nuclear": 0.15,
+            "water": 0.04,
+            "renewable": 0.06
+        }
+    },
+    "croatia": {
+        "2011": {
+            "oil": 0.15,
+            "gas": 0.11,
+            "coal": 0.03,
+            "nuclear": 0,
+            "water": 0.05,
+            "renewable": -1
+        },
+        "2016": {
+            "oil": 0.14,
+            "gas": 0.1,
+            "coal": 0.03,
+            "nuclear": 0,
+            "water": 0.07,
+            "renewable": 0.02
+        },
+        "2021": {
+            "oil": 0.13,
+            "gas": 0.1,
+            "coal": 0.02,
+            "nuclear": 0,
+            "water": 0.07,
+            "renewable": 0.04
+        }
+    },
+    "cyprus": {
+        "2011": {
+            "oil": 0.12,
+            "gas": 0,
+            "coal": -1,
+            "nuclear": 0,
+            "water": 0,
+            "renewable": -1
+        },
+        "2016": {
+            "oil": 0.11,
+            "gas": 0,
+            "coal": -1,
+            "nuclear": 0,
+            "water": 0,
+            "renewable": -1
+        },
+        "2021": {
+            "oil": 0.1,
+            "gas": 0,
+            "coal": -1,
+            "nuclear": 0,
+            "water": 0,
+            "renewable": 0.01
+        }
+    },
+    "czech_republic": {
+        "2011": {
+            "oil": 0.39,
+            "gas": 0.29,
+            "coal": 0.77,
+            "nuclear": 0.27,
+            "water": 0.02,
+            "renewable": 0.07
+        },
+        "2016": {
+            "oil": 0.35,
+            "gas": 0.29,
+            "coal": 0.69,
+            "nuclear": 0.22,
+            "water": 0.02,
+            "renewable": 0.09
+        },
+        "2021": {
+            "oil": 0.41,
+            "gas": 0.33,
+            "coal": 0.54,
+            "nuclear": 0.28,
+            "water": 0.02,
+            "renewable": 0.1
+        }
+    },
+    "denmark": {
+        "2011": {
+            "oil": 0.35,
+            "gas": 0.16,
+            "coal": 0.14,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.15
+        },
+        "2016": {
+            "oil": 0.32,
+            "gas": 0.12,
+            "coal": 0.09,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.2
+        },
+        "2021": {
+            "oil": 0.27,
+            "gas": 0.08,
+            "coal": 0.05,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.27
+        }
+    },
+    "estonia": {
+        "2011": {
+            "oil": 0.06,
+            "gas": 0.02,
+            "coal": 0.17,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.01
+        },
+        "2016": {
+            "oil": 0.06,
+            "gas": 0.02,
+            "coal": 0.16,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.02
+        },
+        "2021": {
+            "oil": 0.06,
+            "gas": 0.02,
+            "coal": 0.12,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.04
+        }
+    },
+    "finland": {
+        "2011": {
+            "oil": 0.41,
+            "gas": 0.13,
+            "coal": 0.23,
+            "nuclear": 0.22,
+            "water": 0.12,
+            "renewable": 0.14
+        },
+        "2016": {
+            "oil": 0.41,
+            "gas": 0.07,
+            "coal": 0.18,
+            "nuclear": 0.22,
+            "water": 0.15,
+            "renewable": 0.17
+        },
+        "2021": {
+            "oil": 0.35,
+            "gas": 0.07,
+            "coal": 0.12,
+            "nuclear": 0.22,
+            "water": 0.15,
+            "renewable": 0.25
+        }
+    },
+    "france": {
+        "2011": {
+            "oil": 3.45,
+            "gas": 1.55,
+            "coal": 0.41,
+            "nuclear": 4.22,
+            "water": 0.44,
+            "renewable": 0.3
+        },
+        "2016": {
+            "oil": 3.17,
+            "gas": 1.6,
+            "coal": 0.35,
+            "nuclear": 3.73,
+            "water": 0.58,
+            "renewable": 0.51
+        },
+        "2021": {
+            "oil": 2.91,
+            "gas": 1.55,
+            "coal": 0.23,
+            "nuclear": 3.43,
+            "water": 0.55,
+            "renewable": 0.74
+        }
+    },
+    "germany": {
+        "2011": {
+            "oil": 4.73,
+            "gas": 2.91,
+            "coal": 3.28,
+            "nuclear": 1.03,
+            "water": 0.18,
+            "renewable": 1.24
+        },
+        "2016": {
+            "oil": 4.76,
+            "gas": 3.06,
+            "coal": 3.2,
+            "nuclear": 0.78,
+            "water": 0.2,
+            "renewable": 1.82
+        },
+        "2021": {
+            "oil": 4.18,
+            "gas": 3.26,
+            "coal": 2.12,
+            "nuclear": 0.62,
+            "water": 0.18,
+            "renewable": 2.28
+        }
+    },
+    "greece": {
+        "2011": {
+            "oil": 0.74,
+            "gas": 0.17,
+            "coal": 0.33,
+            "nuclear": 0,
+            "water": 0.04,
+            "renewable": 0.05
+        },
+        "2016": {
+            "oil": 0.61,
+            "gas": 0.14,
+            "coal": 0.18,
+            "nuclear": 0,
+            "water": 0.05,
+            "renewable": 0.1
+        },
+        "2021": {
+            "oil": 0.52,
+            "gas": 0.25,
+            "coal": 0.07,
+            "nuclear": 0,
+            "water": 0.05,
+            "renewable": 0.16
+        }
+    },
+    "hungary": {
+        "2011": {
+            "oil": 0.28,
+            "gas": 0.39,
+            "coal": 0.11,
+            "nuclear": 0.15,
+            "water": -1,
+            "renewable": 0.03
+        },
+        "2016": {
+            "oil": 0.3,
+            "gas": 0.34,
+            "coal": 0.09,
+            "nuclear": 0.15,
+            "water": -1,
+            "renewable": 0.04
+        },
+        "2021": {
+            "oil": 0.34,
+            "gas": 0.39,
+            "coal": 0.06,
+            "nuclear": 0.14,
+            "water": -1,
+            "renewable": 0.08
+        }
+    },
+    "iceland": {
+        "2011": {
+            "oil": 0.03,
+            "gas": 0,
+            "coal": -1,
+            "nuclear": 0,
+            "water": 0.12,
+            "renewable": 0.04
+        },
+        "2016": {
+            "oil": 0.04,
+            "gas": 0,
+            "coal": -1,
+            "nuclear": 0,
+            "water": 0.13,
+            "renewable": 0.05
+        },
+        "2021": {
+            "oil": 0.03,
+            "gas": 0,
+            "coal": 0,
+            "nuclear": 0,
+            "water": 0.13,
+            "renewable": 0.05
+        }
+    },
+    "ireland": {
+        "2011": {
+            "oil": 0.3,
+            "gas": 0.17,
+            "coal": 0.08,
+            "nuclear": 0,
+            "water": 0.01,
+            "renewable": 0.05
+        },
+        "2016": {
+            "oil": 0.31,
+            "gas": 0.18,
+            "coal": 0.09,
+            "nuclear": 0,
+            "water": 0.01,
+            "renewable": 0.07
+        },
+        "2021": {
+            "oil": 0.28,
+            "gas": 0.18,
+            "coal": 0.05,
+            "nuclear": 0,
+            "water": 0.01,
+            "renewable": 0.11
+        }
+    },
+    "italy": {
+        "2011": {
+            "oil": 2.98,
+            "gas": 2.67,
+            "coal": 0.64,
+            "nuclear": 0,
+            "water": 0.46,
+            "renewable": 0.44
+        },
+        "2016": {
+            "oil": 2.54,
+            "gas": 2.43,
+            "coal": 0.46,
+            "nuclear": 0,
+            "water": 0.39,
+            "renewable": 0.72
+        },
+        "2021": {
+            "oil": 2.35,
+            "gas": 2.61,
+            "coal": 0.23,
+            "nuclear": 0,
+            "water": 0.41,
+            "renewable": 0.76
+        }
+    },
+    "latvia": {
+        "2011": {
+            "oil": 0.07,
+            "gas": 0.05,
+            "coal": -1,
+            "nuclear": 0,
+            "water": 0.03,
+            "renewable": -1
+        },
+        "2016": {
+            "oil": 0.08,
+            "gas": 0.05,
+            "coal": -1,
+            "nuclear": 0,
+            "water": 0.02,
+            "renewable": 0.01
+        },
+        "2021": {
+            "oil": 0.07,
+            "gas": 0.04,
+            "coal": -1,
+            "nuclear": 0,
+            "water": 0.03,
+            "renewable": 0.01
+        }
+    },
+    "lithuania": {
+        "2011": {
+            "oil": 0.11,
+            "gas": 0.11,
+            "coal": 0.01,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.01
+        },
+        "2016": {
+            "oil": 0.13,
+            "gas": 0.08,
+            "coal": 0.01,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.02
+        },
+        "2021": {
+            "oil": 0.14,
+            "gas": 0.08,
+            "coal": 0.01,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.03
+        }
+    },
+    "luxembourg": {
+        "2011": {
+            "oil": 0.13,
+            "gas": 0.04,
+            "coal": -1,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": -1
+        },
+        "2016": {
+            "oil": 0.11,
+            "gas": 0.03,
+            "coal": -1,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.01
+        },
+        "2021": {
+            "oil": 0.11,
+            "gas": 0.03,
+            "coal": -1,
+            "nuclear": 0,
+            "water": -1,
+            "renewable": 0.02
+        }
+    },
+    "netherlands": {
+        "2011": {
+            "oil": 1.97,
+            "gas": 1.47,
+            "coal": 0.31,
+            "nuclear": 0.04,
+            "water": -1,
+            "renewable": 0.15
+        },
+        "2016": {
+            "oil": 1.71,
+            "gas": 1.27,
+            "coal": 0.43,
+            "nuclear": 0.04,
+            "water": -1,
+            "renewable": 0.17
+        },
+        "2021": {
+            "oil": 1.51,
+            "gas": 1.26,
+            "coal": 0.23,
+            "nuclear": 0.03,
+            "water": -1,
+            "renewable": 0.43
+        }
+    },
+    "north_macedonia": {
+        "2011": {
+            "oil": 0.04,
+            "gas": -1,
+            "coal": 0.06,
+            "nuclear": 0,
+            "water": 0.01,
+            "renewable": -1
+        },
+        "2016": {
+            "oil": 0.05,
+            "gas": 0.01,
+            "coal": 0.04,
+            "nuclear": 0,
+            "water": 0.02,
+            "renewable": -1
+        },
+        "2021": {
+            "oil": 0.05,
+            "gas": 0.01,
+            "coal": 0.03,
+            "nuclear": 0,
+            "water": 0.01,
+            "renewable": -1
+        }
+    },
+    "norway": {
+        "2011": {
+            "oil": 0.43,
+            "gas": 0.15,
+            "coal": 0.04,
+            "nuclear": 0,
+            "water": 1.19,
+            "renewable": 0.02
+        },
+        "2016": {
+            "oil": 0.4,
+            "gas": 0.16,
+            "coal": 0.03,
+            "nuclear": 0,
+            "water": 1.37,
+            "renewable": 0.04
+        },
+        "2021": {
+            "oil": 0.38,
+            "gas": 0.15,
+            "coal": 0.03,
+            "nuclear": 0,
+            "water": 1.35,
+            "renewable": 0.13
+        }
+    },
+    "poland": {
+        "2011": {
+            "oil": 1.16,
+            "gas": 0.59,
+            "coal": 2.3,
+            "nuclear": 0,
+            "water": 0.02,
+            "renewable": 0.15
+        },
+        "2016": {
+            "oil": 1.2,
+            "gas": 0.66,
+            "coal": 2.07,
+            "nuclear": 0,
+            "water": 0.02,
+            "renewable": 0.23
+        },
+        "2021": {
+            "oil": 1.38,
+            "gas": 0.84,
+            "coal": 1.88,
+            "nuclear": 0,
+            "water": 0.02,
+            "renewable": 0.32
+        }
+    },
+    "portugal": {
+        "2011": {
+            "oil": 0.51,
+            "gas": 0.19,
+            "coal": 0.09,
+            "nuclear": 0,
+            "water": 0.11,
+            "renewable": 0.14
+        },
+        "2016": {
+            "oil": 0.49,
+            "gas": 0.18,
+            "coal": 0.12,
+            "nuclear": 0,
+            "water": 0.15,
+            "renewable": 0.18
+        },
+        "2021": {
+            "oil": 0.42,
+            "gas": 0.21,
+            "coal": 0.01,
+            "nuclear": 0,
+            "water": 0.11,
+            "renewable": 0.2
+        }
+    },
+    "romania": {
+        "2011": {
+            "oil": 0.38,
+            "gas": 0.46,
+            "coal": 0.34,
+            "nuclear": 0.11,
+            "water": 0.15,
+            "renewable": 0.02
+        },
+        "2016": {
+            "oil": 0.4,
+            "gas": 0.38,
+            "coal": 0.22,
+            "nuclear": 0.1,
+            "water": 0.17,
+            "renewable": 0.1
+        },
+        "2021": {
+            "oil": 0.46,
+            "gas": 0.41,
+            "coal": 0.17,
+            "nuclear": 0.1,
+            "water": 0.16,
+            "renewable": 0.1
+        }
+    },
+    "slovakia": {
+        "2011": {
+            "oil": 0.16,
+            "gas": 0.19,
+            "coal": 0.15,
+            "nuclear": 0.15,
+            "water": 0.04,
+            "renewable": 0.02
+        },
+        "2016": {
+            "oil": 0.16,
+            "gas": 0.16,
+            "coal": 0.13,
+            "nuclear": 0.14,
+            "water": 0.04,
+            "renewable": 0.03
+        },
+        "2021": {
+            "oil": 0.18,
+            "gas": 0.19,
+            "coal": 0.12,
+            "nuclear": 0.14,
+            "water": 0.04,
+            "renewable": 0.04
+        }
+    },
+    "slovenia": {
+        "2011": {
+            "oil": 0.11,
+            "gas": 0.03,
+            "coal": 0.06,
+            "nuclear": 0.06,
+            "water": 0.04,
+            "renewable": 0.01
+        },
+        "2016": {
+            "oil": 0.11,
+            "gas": 0.03,
+            "coal": 0.05,
+            "nuclear": 0.05,
+            "water": 0.04,
+            "renewable": 0.01
+        },
+        "2021": {
+            "oil": 0.1,
+            "gas": 0.03,
+            "coal": 0.03,
+            "nuclear": 0.05,
+            "water": 0.04,
+            "renewable": 0.01
+        }
+    },
+    "spain": {
+        "2011": {
+            "oil": 2.81,
+            "gas": 1.21,
+            "coal": 0.54,
+            "nuclear": 0.55,
+            "water": 0.3,
+            "renewable": 0.63
+        },
+        "2016": {
+            "oil": 2.63,
+            "gas": 1.05,
+            "coal": 0.44,
+            "nuclear": 0.54,
+            "water": 0.35,
+            "renewable": 0.71
+        },
+        "2021": {
+            "oil": 2.45,
+            "gas": 1.22,
+            "coal": 0.16,
+            "nuclear": 0.51,
+            "water": 0.28,
+            "renewable": 0.97
+        }
+    },
+    "sweden": {
+        "2011": {
+            "oil": 0.61,
+            "gas": 0.04,
+            "coal": 0.1,
+            "nuclear": 0.58,
+            "water": 0.67,
+            "renewable": 0.22
+        },
+        "2016": {
+            "oil": 0.59,
+            "gas": 0.04,
+            "coal": 0.08,
+            "nuclear": 0.58,
+            "water": 0.6,
+            "renewable": 0.34
+        },
+        "2021": {
+            "oil": 0.54,
+            "gas": 0.05,
+            "coal": 0.06,
+            "nuclear": 0.48,
+            "water": 0.67,
+            "renewable": 0.49
+        }
+    },
+    "switzerland": {
+        "2011": {
+            "oil": 0.48,
+            "gas": 0.11,
+            "coal": 0.01,
+            "nuclear": 0.26,
+            "water": 0.32,
+            "renewable": 0.02
+        },
+        "2016": {
+            "oil": 0.44,
+            "gas": 0.13,
+            "coal": -1,
+            "nuclear": 0.2,
+            "water": 0.33,
+            "renewable": 0.04
+        },
+        "2021": {
+            "oil": 0.37,
+            "gas": 0.13,
+            "coal": -1,
+            "nuclear": 0.17,
+            "water": 0.34,
+            "renewable": 0.06
+        }
+    },
+    "turkey": {
+        "2011": {
+            "oil": 1.34,
+            "gas": 1.51,
+            "coal": 1.42,
+            "nuclear": 0,
+            "water": 0.52,
+            "renewable": 0.06
+        },
+        "2016": {
+            "oil": 1.98,
+            "gas": 1.6,
+            "coal": 1.61,
+            "nuclear": 0,
+            "water": 0.65,
+            "renewable": 0.24
+        },
+        "2021": {
+            "oil": 1.89,
+            "gas": 2.06,
+            "coal": 1.74,
+            "nuclear": 0,
+            "water": 0.52,
+            "renewable": 0.61
+        }
+    },
+    "ukraine": {
+        "2011": {
+            "oil": 0.58,
+            "gas": 2.02,
+            "coal": 1.74,
+            "nuclear": 0.86,
+            "water": 0.11,
+            "renewable": -1
+        },
+        "2016": {
+            "oil": 0.45,
+            "gas": 1.13,
+            "coal": 1.36,
+            "nuclear": 0.75,
+            "water": 0.07,
+            "renewable": 0.02
+        },
+        "2021": {
+            "oil": 0.46,
+            "gas": 0.94,
+            "coal": 0.95,
+            "nuclear": 0.78,
+            "water": 0.1,
+            "renewable": 0.11
+        }
+    },
+    "united_kingdom": {
+        "2011": {
+            "oil": 3.14,
+            "gas": 2.95,
+            "coal": 1.32,
+            "nuclear": 0.66,
+            "water": 0.06,
+            "renewable": 0.36
+        },
+        "2016": {
+            "oil": 3.18,
+            "gas": 2.9,
+            "coal": 0.46,
+            "nuclear": 0.66,
+            "water": 0.07,
+            "renewable": 0.84
+        },
+        "2021": {
+            "oil": 2.5,
+            "gas": 2.77,
+            "coal": 0.21,
+            "nuclear": 0.41,
+            "water": 0.05,
+            "renewable": 1.24
+        }
+    },
+    "other": {
+        "2011": {
+            "oil": 0.69,
+            "gas": 0.15,
+            "coal": 0.66,
+            "nuclear": 0,
+            "water": 0.27,
+            "renewable": -1
+        },
+        "2016": {
+            "oil": 0.7,
+            "gas": 0.17,
+            "coal": 0.6,
+            "nuclear": 0,
+            "water": 0.34,
+            "renewable": -1
+        },
+        "2021": {
+            "oil": 0.69,
+            "gas": 0.22,
+            "coal": 0.31,
+            "nuclear": 0,
+            "water": 0.37,
+            "renewable": 0.03
+        }
+    }
+}
