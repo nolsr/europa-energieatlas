@@ -35,8 +35,6 @@ body {
 
 .node {
     flex: 1;
-    background-color: #E72061;
-    opacity: 0;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -56,6 +54,11 @@ body {
 }
 
 .capital {
+    opacity: 1;
+}
+
+.country {
+    background-color: aquamarine;
     opacity: 1;
 }
 
