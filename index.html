@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>Europa Energieatlas</title>
+    <script src="./main.js"></script>
 </head>
 
 <body>
     <!-- <img src="./assets/map.png" id="bild" alt=""> -->
     <img id="logo" src="./assets/logo.svg" alt="Europa Energieatlas">
     <div id="map-container"></div>
-    <div id="control-panel"></div>
-
-    <script src="./countries.js"></script>
-    <script src="./main.js"></script>
+    <div id="control-panel">
+        <div class="checkbox-wrapper oil"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'oil')">Öl</label></div>
+        <div class="checkbox-wrapper gas"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'gas')">Gas</label></div>
+        <div class="checkbox-wrapper coal"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'coal')">Kohle</label></div>
+        <div class="checkbox-wrapper nuclear"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'nuclear')">Kernkraft</label></div>
+        <div class="checkbox-wrapper water"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'water')">Wasserkraft</label></div>
+        <div class="checkbox-wrapper renewable"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'renewable')">Erneuerbar</label></div>
+    </div>
 </body>
 
 </html>

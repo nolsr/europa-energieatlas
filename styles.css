@@ -1,5 +1,5 @@
 body {
-    background-color: #160c38;
+    background-color: #1a162e;
     margin: 0;
     padding: 0;
 }
@@ -22,7 +22,14 @@ body {
 }
 
 #control-panel {
-
+    position: absolute;
+    top: 15vh;
+    right: 10vh;
+    height: 70vh;
+    width: 50vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
 }
 
 #bild {
@@ -35,10 +42,10 @@ body {
 
 .node {
     flex: 1;
-    border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .circle {
@@ -47,22 +54,114 @@ body {
     border-radius: 100%;
     background-color: white;
     opacity: 0.1;
+    transition: opacity 1s;
+    transition: all 1s;
+    position: absolute;
 }
 
-.node:hover {
+.capital:hover {
     opacity: 0.5;
 }
 
 .capital {
-    opacity: 1;
+    border-radius: 100%;
+    transition: "opacity" 0.2s 0;
+    opacity: 0.8;
+    z-index: 100;
 }
 
-.country {
-    background-color: aquamarine;
-    opacity: 1;
+
+
+
+
+
+/* CONTROLS */
+
+.checkbox-wrapper {
+    margin-bottom: 0.2rem;
 }
 
-.active {
-    /* background-color: white;
-    opacity: 0.2 !important; */
+.checkbox-wrapper label {
+    font-size: 1.35em;
+    font-family: sans-serif;
+}
+
+.oil label {
+    color: #724DAE;
+}
+.gas label {
+    color: #E72061;
+}
+.coal label {
+    color: #F06D3D;
+}
+.nuclear label {
+    color: #E3CF00;
+}
+.water label {
+    color: #1CC0C9;
+}
+.renewable label {
+    color: #57D64A;
+}
+
+.oil input:checked {
+    background: #724DAE border-box;
+}
+.gas input:checked {
+    background: #E72061 border-box;
+}
+.coal input:checked {
+    background: #F06D3D border-box;
+}
+.nuclear input:checked {
+    background: #E3CF00 border-box;
+}
+.water input:checked {
+    background: #1CC0C9 border-box;
+}
+.renewable input:checked {
+    background: #57D64A border-box;
+}
+
+
+.oil input {
+    border-color: #724DAE !important;
+}
+.gas input {
+    border-color: #E72061 !important;
+}
+.coal input {
+    border-color: #F06D3D !important;
+}
+.nuclear input {
+    border-color: #E3CF00 !important;
+}
+.water input {
+    border-color: #1CC0C9 !important;
+}
+.renewable input {
+    border-color: #57D64A !important;
+}
+
+.checkbox-wrapper input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    font: inherit;
+    border: 0.1em solid transparent;
+    margin-bottom: -0.125em;
+    margin-right: 1rem;
+}
+.checkbox-wrapper input[type="checkbox"] {
+    border-radius: 0.25em;
+}
+
+.checkbox-wrapper input:hover {
+    cursor: pointer;
+}
+.checkbox-wrapper label:hover {
+    cursor: pointer;
 }
