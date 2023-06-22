@@ -23,25 +23,20 @@ function exportMap() {
 }
 
 function loadExport() {
-    // mit require(fs) vielleicht schneller
-    fetch('./assets/map.json')
-        .then((response) => response.json())
-        .then((mapJson) => {
-            fetch('./assets/capitals.json')
-                .then(response => response.json())
-                .then(capitalJson => {
-                    const map = document.getElementById('map-container');
-                    Object.keys(mapJson).forEach((index) => {
-                        map.childNodes[index].classList.add('active');
-                        const circle = document.createElement('div');
-                        circle.classList.add('circle');
-                        map.childNodes[index].appendChild(circle);
-                    });
-                    Object.keys(capitalJson).forEach(index => {
-                        map.childNodes[index].childNodes[0].classList.add('capital');
-                    })
-                })
+    const map = document.getElementById('map-container');
+    console.log(countries);
+    for (const [country, countryData] of Object.entries(countries)) {
+        countryData.points.forEach(p => {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+            map.childNodes[p].classList.add('active');
+            map.childNodes[p].appendChild(circle);
         });
+        const circle = document.createElement('div');
+        circle.classList.add('circle');
+        map.childNodes[countryData.capital].appendChild(circle);
+        map.childNodes[countryData.capital].childNodes[0].classList.add('capital');
+    }
 }
 
 generateMapNodes();
