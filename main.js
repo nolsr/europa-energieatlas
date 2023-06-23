@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     generateMapNodes(() => {
         loadScript('./countries.js', function () {
             loadExport();
-            colorCountries(2011);
+            colorCountries(2021);
         });
     });
 });
@@ -139,5 +139,5 @@ function getCountryColor(data) {
 function toggleCheckbox(checkbox, key) {
     ignore[key] = !checkbox.checked;
     console.log(ignore);
-    colorCountries(2011, false);
+    colorCountries(2021, false);
 }
