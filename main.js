@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     generateMapNodes(() => {
         loadScript('./countries.js', function () {
             loadExport();
-            colorCountries(2021);
+            colorCountries(2011);
         });
     });
 });
@@ -87,23 +87,54 @@ function loadExport() {
 
 function colorCountries(year, delay = true) {
     for (let i = 0; i < Object.keys(countries).length; i++) {
-        setTimeout(() => colorCountry(Object.values(countries)[i], year), delay ? 200 * (i + 1) : 0);
+        debounce(colorCountry, delay ? 200 * (i + 1) : 0)(Object.values(countries)[i], year);
     }
 }
 
 function colorCountry(countryData, year) {
     const c = getCountryColor(countryData.data[year]);
     const size = calcCapitalSize(countryData.data[year]);
-    map.childNodes[countryData.capital].childNodes[0].style.backgroundColor = c;
-    map.childNodes[countryData.capital].childNodes[0].style.width = size + 'px';
-    map.childNodes[countryData.capital].childNodes[0].style.height = size + 'px';
+    const capitalElement = map.childNodes[countryData.capital].childNodes[0];
+
+    capitalElement.style.width = size + 'px';
+    capitalElement.style.height = size + 'px';
+    capitalElement.classList.add('animated');
+
     countryData.points.forEach(p => {
-        map.childNodes[p].childNodes[0].style.backgroundColor = c;
-        map.childNodes[p].childNodes[0].style.opacity = 1;
+        map.childNodes[p].childNodes[0].classList.add('animated');
     });
+
+    setTimeout(() => {
+        capitalElement.style.backgroundColor = c;
+        countryData.points.forEach(p => {
+            const pointElement = map.childNodes[p].childNodes[0];
+            pointElement.style.backgroundColor = c;
+            pointElement.style.opacity = 1;
+        });
+
+        setTimeout(() => {
+            capitalElement.classList.remove('animated');
+            countryData.points.forEach(p => {
+                map.childNodes[p].childNodes[0].classList.remove('animated');
+            });
+        }, 500);
+    }, 0);
 }
 
-function calcCapitalSize(data) {
+const debounce = (fn, delay) => { let timeoutId; return function () { clearTimeout(timeoutId); timeoutId = setTimeout(() => { fn.apply(this, arguments); }, delay); }; };
+
+function calcCapitalSize(countryData) {
+    const data = structuredClone(countryData);
+    Object.keys(ignore).forEach(key => {
+        if (ignore[key]) {
+            delete data[key];
+        }
+    })
+    Object.keys(data).forEach(key => {
+        if (data[key] == -1) {
+            data[key] = 0.049;
+        }
+    })
     const consumption = Object.values(data).reduce((a, b) => a + b);
     return 15 + (11 * consumption);
 }
@@ -139,5 +170,5 @@ function getCountryColor(data) {
 function toggleCheckbox(checkbox, key) {
     ignore[key] = !checkbox.checked;
     console.log(ignore);
-    colorCountries(2021, false);
+    colorCountries(2011, false);
 }

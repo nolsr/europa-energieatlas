@@ -61,10 +61,13 @@ h1 {
     border-radius: 100%;
     background-color: white;
     opacity: 0.1;
-    transition: opacity 1s;
     transition: all 1s;
     position: absolute;
 }
+
+.animated {
+    transition: all 0.5s;
+  }
 
 .capital:hover {
     opacity: 0.5;
