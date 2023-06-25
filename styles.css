@@ -2,13 +2,14 @@ body {
     background-color: #1a162e;
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 
 #logo {
     position: absolute;
     top: 8vh;
     left: 12vh;
-    width: 30vh;
+    width: 12em;
 }
 
 #map-container {
@@ -23,9 +24,9 @@ body {
 
 #control-panel {
     position: absolute;
-    top: 10vh;
+    top: calc(10vh - 20px);
     right: 6vw;
-    height: 80vh;
+    height: calc(80vh + 40px);
     width: 25vw;
     display: flex;
     flex-direction: column;
@@ -33,21 +34,24 @@ body {
     align-items: center;
 }
 
-.control-wrapper {
-    width: 100%;
-    height: 15rem;
-    border: 1px solid white;
-    border-width: 0 0 0 1px;
-    padding-left: 1.5rem;
+#impressum {
+    position: absolute;
+    bottom: 8vh;
+    left: 12vh;
 }
 
-.control-wrapper:first-child {
-    height: 25rem;
+a {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 1);
+}
+
+a:visited {
+    color: rgba(255, 255, 255, 1);
 }
 
 h1 {
+    font-size: 1.8rem;
     color: white;
-    font-family: sans-serif;
     margin-top: -5px;
 }
 
@@ -77,9 +81,13 @@ h1 {
     position: absolute;
 }
 
-.animated {
+.anim {
+    transition: all 1s;
+}
+
+.shortAnim {
     transition: all 0.5s;
-  }
+}
 
 .capital:hover {
     opacity: 0.5;
@@ -92,11 +100,6 @@ h1 {
     z-index: 100;
 }
 
-
-
-
-
-
 /* CONTROLS */
 
 .checkbox-wrapper {
@@ -105,66 +108,64 @@ h1 {
 
 .checkbox-wrapper label {
     font-size: 1.35em;
-    font-family: sans-serif;
     color: white;
 }
 
 .oil label {
-    color: #724DAE;
+    color: #724dae;
 }
 .gas label {
-    color: #E72061;
+    color: #e72061;
 }
 .coal label {
-    color: #F06D3D;
+    color: #f06d3d;
 }
 .nuclear label {
-    color: #E3CF00;
+    color: #e3cf00;
 }
 .water label {
-    color: #1CC0C9;
+    color: #1cc0c9;
 }
 .renewable label {
-    color: #57D64A;
+    color: #57d64a;
 }
 
 .oil input:checked {
-    background: #724DAE border-box;
+    background: #724dae border-box;
 }
 .gas input:checked {
-    background: #E72061 border-box;
+    background: #e72061 border-box;
 }
 .coal input:checked {
-    background: #F06D3D border-box;
+    background: #f06d3d border-box;
 }
 .nuclear input:checked {
-    background: #E3CF00 border-box;
+    background: #e3cf00 border-box;
 }
 .water input:checked {
-    background: #1CC0C9 border-box;
+    background: #1cc0c9 border-box;
 }
 .renewable input:checked {
-    background: #57D64A border-box;
+    background: #57d64a border-box;
 }
-
 
 .oil input {
-    border-color: #724DAE !important;
+    border-color: #724dae !important;
 }
 .gas input {
-    border-color: #E72061 !important;
+    border-color: #e72061 !important;
 }
 .coal input {
-    border-color: #F06D3D !important;
+    border-color: #f06d3d !important;
 }
 .nuclear input {
-    border-color: #E3CF00 !important;
+    border-color: #e3cf00 !important;
 }
 .water input {
-    border-color: #1CC0C9 !important;
+    border-color: #1cc0c9 !important;
 }
 .renewable input {
-    border-color: #57D64A !important;
+    border-color: #57d64a !important;
 }
 
 .checkbox-wrapper input {
@@ -184,7 +185,8 @@ h1 {
 }
 
 .checkbox-wrapper input[type="checkbox"] {
-    border-radius: 0.25em;
+    border-radius: 0.15em;
+    /* border-radius: 0%; */
 }
 
 .checkbox-wrapper input:hover {
@@ -193,4 +195,64 @@ h1 {
 
 .checkbox-wrapper label:hover {
     cursor: pointer;
+}
+
+.control-wrapper {
+    width: 100%;
+    height: 15rem;
+    border: 1px solid white;
+    border-width: 0 0 0 1px;
+    padding: 0.7rem;
+    padding-left: 1.5rem;
+}
+
+.control-wrapper:first-child {
+    height: auto;
+}
+
+.checkers-container {
+    display: flex;
+}
+
+.checkers {
+    margin-right: auto;
+}
+
+.btn-container {
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+button {
+    padding: 1rem 2rem;
+    font-size: 1em;
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.15em;
+    background-color: transparent;
+    box-sizing: border-box;
+    width: 7em;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.selected {
+    font-weight: bold;
+    color: #1a162e;
+    background-color: white;
+    border: none;
+}
+
+.selected:hover {
+    cursor: default;
+    font-weight: bold;
+    color: #1a162e;
+    background-color: white;
 }

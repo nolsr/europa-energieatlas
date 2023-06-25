@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <title>Europa Energieatlas</title>
+    <title>Energieatlas Europa</title>
     <script src="./main.js"></script>
 </head>
 
@@ -13,27 +13,42 @@
     <!-- <img src="./assets/map.png" id="bild" alt=""> -->
     <img id="logo" src="./assets/logo.svg" alt="Europa Energieatlas">
     <div id="map-container"></div>
-    
+
     <div id="control-panel">
         <div class="control-wrapper">
             <h1>Energiequelle</h1>
-            <div class="checkers">
-                <div class="left">
-                    <div class="checkbox-wrapper oil"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'oil')">Öl</label></div>
-                    <div class="checkbox-wrapper gas"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'gas')">Gas</label></div>
-                    <div class="checkbox-wrapper coal"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'coal')">Kohle</label></div>
-                    <div class="checkbox-wrapper nuclear"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'nuclear')">Kernkraft</label></div>
-                    <div class="checkbox-wrapper water"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'water')">Wasserkraft</label></div>
-                    <div class="checkbox-wrapper renewable"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'renewable')">Erneuerbar</label></div>
+            <div class="checkers-container">
+                <div class="checkers">
+                    <div class="checkbox-wrapper oil"><label><input type="checkbox" name="cb" checked
+                                onclick="toggleCheckbox(this, 'oil')">Öl</label></div>
+                    <div class="checkbox-wrapper gas"><label><input type="checkbox" name="cb" checked
+                                onclick="toggleCheckbox(this, 'gas')">Gas</label></div>
+                    <div class="checkbox-wrapper coal"><label><input type="checkbox" name="cb" checked
+                                onclick="toggleCheckbox(this, 'coal')">Kohle</label></div>
+                    <div class="checkbox-wrapper nuclear"><label><input type="checkbox" name="cb" checked
+                                onclick="toggleCheckbox(this, 'nuclear')">Kernkraft</label></div>
+                    <div class="checkbox-wrapper water"><label><input type="checkbox" name="cb" checked
+                                onclick="toggleCheckbox(this, 'water')">Wasserkraft</label></div>
+                    <div class="checkbox-wrapper renewable"><label><input type="checkbox" name="cb" checked
+                                onclick="toggleCheckbox(this, 'renewable')">Erneuerbar</label></div>
                 </div>
-                <div class="right">
-                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked >Einwohner</label></div>
-                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked >BIP</label></div>
-                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked >HDI</label></div>
+                <div class="checkers">
+                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked>Einwohner</label>
+                    </div>
+                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked>BIP</label></div>
+                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked>HDI</label></div>
                 </div>
+            </div>
+            <div class="btn-container">
+                <button id="btn1" onclick="selectYear(2011)">2011</button>
+                <button id="btn2" onclick="selectYear(2016)">2016</button>
+                <button id="btn3" class="selected" onclick="selectYear(2021)">2021</button>
             </div>
         </div>
         <div class="control-wrapper"></div>
+    </div>
+    <div id="impressum">
+        <a href="">Impressum</a>
     </div>
 </body>
 

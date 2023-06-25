@@ -1,5 +1,5 @@
 const selected = {};
-let map = null;
+let map, btn1, btn2, btn3;
 
 const cOil = '#724DAE';
 const cGas = '#E72061';
@@ -17,14 +17,18 @@ const ignore = {
     renewable: false
 }
 
+let selectedYear = 2021;
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    btn1 = document.getElementById('btn1');
+    btn2 = document.getElementById('btn2');
+    btn3 = document.getElementById('btn3');
     map = document.getElementById('map-container');
     generateMapNodes(() => {
         loadScript('./countries.js', function () {
             loadExport();
-            colorCountries(2011);
+            colorCountries(selectedYear);
         });
     });
 });
@@ -54,9 +58,6 @@ function generateMapNodes(_callback) {
     for (let i = 0; i < 60 ** 2; i++) {
         const node = document.createElement('div');
         node.classList.add('node');
-        node.addEventListener('click', () => {
-            // node.classList.toggle('country');
-        });
         map.appendChild(node);
     }
     _callback();
@@ -89,21 +90,22 @@ function loadExport() {
 
 function colorCountries(year, delay = true) {
     for (let i = 0; i < Object.keys(countries).length; i++) {
-        debounce(colorCountry, delay ? 200 * (i + 1) : 0)(Object.values(countries)[i], year);
+        debounce(colorCountry, delay ? 200 * (i + 1) : 0)(Object.values(countries)[i], year, delay);
     }
 }
 
-function colorCountry(countryData, year) {
+function colorCountry(countryData, year, shortAnim) {
     const c = getCountryColor(countryData.data[year]);
     const size = calcCapitalSize(countryData.data[year]);
     const capitalElement = map.childNodes[countryData.capital].childNodes[0];
+    const animName = shortAnim ? 'shortAnim' : 'anim';
 
     capitalElement.style.width = size + 'px';
     capitalElement.style.height = size + 'px';
-    capitalElement.classList.add('animated');
+    capitalElement.classList.add(animName);
 
     countryData.points.forEach(p => {
-        map.childNodes[p].childNodes[0].classList.add('animated');
+        map.childNodes[p].childNodes[0].classList.add(animName);
     });
 
     setTimeout(() => {
@@ -115,15 +117,15 @@ function colorCountry(countryData, year) {
         });
 
         setTimeout(() => {
-            capitalElement.classList.remove('animated');
+            capitalElement.classList.remove(animName);
             countryData.points.forEach(p => {
-                map.childNodes[p].childNodes[0].classList.remove('animated');
+                map.childNodes[p].childNodes[0].classList.remove(animName);
             });
         }, 500);
     }, 0);
 }
 
-const debounce = (fn, delay) => { let timeoutId; return function () { clearTimeout(timeoutId); timeoutId = setTimeout(() => { fn.apply(this, arguments); }, delay); }; };
+const debounce = (fn, delay, shortAnim) => { let timeoutId; return function () { clearTimeout(timeoutId); timeoutId = setTimeout(() => { fn.apply(this, arguments); }, delay, shortAnim); }; };
 
 function calcCapitalSize(countryData) {
     const data = structuredClone(countryData);
@@ -172,5 +174,28 @@ function getCountryColor(data) {
 function toggleCheckbox(checkbox, key) {
     ignore[key] = !checkbox.checked;
     console.log(ignore);
-    colorCountries(2011, false);
+    colorCountries(selectedYear, false);
+}
+
+function selectYear(year) {
+    selectedYear = year;
+    colorCountries(selectedYear, false);
+
+    switch (year) {
+        case 2011:
+            btn1.classList.add('selected');
+            btn2.classList.remove('selected');
+            btn3.classList.remove('selected');
+            break;
+        case 2016:
+            btn1.classList.remove('selected');
+            btn2.classList.add('selected');
+            btn3.classList.remove('selected');
+            break;
+        case 2021:
+            btn1.classList.remove('selected');
+            btn2.classList.remove('selected');
+            btn3.classList.add('selected');
+            break;
+    }
 }
