@@ -23,20 +23,32 @@ body {
 
 #control-panel {
     position: absolute;
-    top: 15vh;
+    top: 10vh;
     right: 6vw;
-    height: 70vh;
+    height: 80vh;
     width: 25vw;
-    /* background-color: rgba(255, 255, 255, 0.1); */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-width: 0 0 0 3px;
-    /* border-radius: 1.5rem; */
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-wrapper {
+    width: 100%;
+    height: 15rem;
+    border: 1px solid white;
+    border-width: 0 0 0 1px;
+    padding-left: 1.5rem;
+}
+
+.control-wrapper:first-child {
+    height: 25rem;
 }
 
 h1 {
     color: white;
     font-family: sans-serif;
+    margin-top: -5px;
 }
 
 #bild {
@@ -94,6 +106,7 @@ h1 {
 .checkbox-wrapper label {
     font-size: 1.35em;
     font-family: sans-serif;
+    color: white;
 }
 
 .oil label {
@@ -161,10 +174,15 @@ h1 {
     width: 1em;
     height: 1em;
     font: inherit;
-    border: 0.1em solid transparent;
+    border: 0.1em solid white;
     margin-bottom: -0.125em;
     margin-right: 1rem;
 }
+
+.input:checked {
+    background: white border-box;
+}
+
 .checkbox-wrapper input[type="checkbox"] {
     border-radius: 0.25em;
 }
@@ -172,6 +190,7 @@ h1 {
 .checkbox-wrapper input:hover {
     cursor: pointer;
 }
+
 .checkbox-wrapper label:hover {
     cursor: pointer;
 }

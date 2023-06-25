@@ -15,13 +15,25 @@
     <div id="map-container"></div>
     
     <div id="control-panel">
-        <h1>Energiequelle</h1>
-        <div class="checkbox-wrapper oil"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'oil')">Öl</label></div>
-        <div class="checkbox-wrapper gas"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'gas')">Gas</label></div>
-        <div class="checkbox-wrapper coal"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'coal')">Kohle</label></div>
-        <div class="checkbox-wrapper nuclear"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'nuclear')">Kernkraft</label></div>
-        <div class="checkbox-wrapper water"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'water')">Wasserkraft</label></div>
-        <div class="checkbox-wrapper renewable"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'renewable')">Erneuerbar</label></div>
+        <div class="control-wrapper">
+            <h1>Energiequelle</h1>
+            <div class="checkers">
+                <div class="left">
+                    <div class="checkbox-wrapper oil"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'oil')">Öl</label></div>
+                    <div class="checkbox-wrapper gas"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'gas')">Gas</label></div>
+                    <div class="checkbox-wrapper coal"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'coal')">Kohle</label></div>
+                    <div class="checkbox-wrapper nuclear"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'nuclear')">Kernkraft</label></div>
+                    <div class="checkbox-wrapper water"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'water')">Wasserkraft</label></div>
+                    <div class="checkbox-wrapper renewable"><label><input type="checkbox" name="cb" checked onclick="toggleCheckbox(this, 'renewable')">Erneuerbar</label></div>
+                </div>
+                <div class="right">
+                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked >Einwohner</label></div>
+                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked >BIP</label></div>
+                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked >HDI</label></div>
+                </div>
+            </div>
+        </div>
+        <div class="control-wrapper"></div>
     </div>
 </body>
 

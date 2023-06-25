@@ -17,6 +17,8 @@ const ignore = {
     renewable: false
 }
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
     map = document.getElementById('map-container');
     generateMapNodes(() => {
