@@ -1,5 +1,9 @@
 const selected = {};
-let map, btn1, btn2, btn3;
+let map, btn1, btn2, btn3, residents, bpi, hdi, selectedCountryName,
+    oilBar, gasBar, coalBar, nuclearBar, waterBar, renewableBar,
+    lastHovered, oilValue, gasValue, nuclearValue, coalValue, waterValue,
+    renewableValue, countryInfo, unit;
+let initial = true;
 
 const cOil = '#724DAE';
 const cGas = '#E72061';
@@ -19,12 +23,31 @@ const ignore = {
 
 let selectedYear = 2021;
 
+let inRelation = null;
 
 document.addEventListener("DOMContentLoaded", () => {
     btn1 = document.getElementById('btn1');
     btn2 = document.getElementById('btn2');
     btn3 = document.getElementById('btn3');
+    residents = document.getElementById('residents');
+    bpi = document.getElementById('bpi');
+    hdi = document.getElementById('hdi');
     map = document.getElementById('map-container');
+    selectedCountryName = document.getElementById('selectedCountryName');
+    oilBar = document.getElementById('oil-bar');
+    gasBar = document.getElementById('gas-bar');
+    coalBar = document.getElementById('coal-bar');
+    nuclearBar = document.getElementById('nuclear-bar');
+    waterBar = document.getElementById('water-bar');
+    renewableBar = document.getElementById('renewable-bar');
+    oilValue = document.getElementById('oil-value');
+    gasValue = document.getElementById('gas-value');
+    nuclearValue = document.getElementById('nuclear-value');
+    coalValue = document.getElementById('coal-value');
+    waterValue = document.getElementById('water-value');
+    renewableValue = document.getElementById('renewable-value');
+    countryInfo = document.getElementById('countryInfo');
+    unit = document.getElementById('unit');
     generateMapNodes(() => {
         loadScript('./countries.js', function () {
             loadExport();
@@ -74,6 +97,7 @@ function exportMap() {
 }
 
 function loadExport() {
+    let i = 1;
     for (const [country, countryData] of Object.entries(countries)) {
         countryData.points.forEach(p => {
             const circle = document.createElement('div');
@@ -85,6 +109,11 @@ function loadExport() {
         circle.classList.add('circle');
         map.childNodes[countryData.capital].appendChild(circle);
         map.childNodes[countryData.capital].childNodes[0].classList.add('capital');
+        map.childNodes[countryData.capital].childNodes[0].style.zIndex = 100 + i++;
+        map.childNodes[countryData.capital].childNodes[0].addEventListener('mouseover', () => {
+            lastHovered = country;
+            hoverCountry(countryData);
+        });
     }
 }
 
@@ -128,7 +157,11 @@ function colorCountry(countryData, year, shortAnim) {
 const debounce = (fn, delay, shortAnim) => { let timeoutId; return function () { clearTimeout(timeoutId); timeoutId = setTimeout(() => { fn.apply(this, arguments); }, delay, shortAnim); }; };
 
 function calcCapitalSize(countryData) {
-    const data = structuredClone(countryData);
+    const consumption = getTotalConsumption(structuredClone(countryData));
+    return 15 + (11 * consumption);
+}
+
+function getTotalConsumption(data) {
     Object.keys(ignore).forEach(key => {
         if (ignore[key]) {
             delete data[key];
@@ -139,8 +172,7 @@ function calcCapitalSize(countryData) {
             data[key] = 0.049;
         }
     })
-    const consumption = Object.values(data).reduce((a, b) => a + b);
-    return 15 + (11 * consumption);
+    return Object.values(data).reduce((a, b) => a + b);
 }
 
 function getHighestValueString(countryData) {
@@ -175,11 +207,17 @@ function toggleCheckbox(checkbox, key) {
     ignore[key] = !checkbox.checked;
     console.log(ignore);
     colorCountries(selectedYear, false);
+    if (lastHovered) {
+        hoverCountry(countries[lastHovered]);
+    }
 }
 
 function selectYear(year) {
     selectedYear = year;
     colorCountries(selectedYear, false);
+    if (lastHovered) {
+        hoverCountry(countries[lastHovered]);
+    }
 
     switch (year) {
         case 2011:
@@ -198,4 +236,67 @@ function selectYear(year) {
             btn3.classList.add('selected');
             break;
     }
+
+}
+function setInRelation(rel) {
+    inRelation = rel;
+    switch (rel) {
+        case 'residents':
+            bpi.checked = false;
+            hdi.checked = false;
+            break;
+        case 'bip':
+            residents.checked = false;
+            hdi.checked = false;
+            break;
+        case 'hdi':
+            residents.checked = false;
+            bpi.checked = false;
+            break;
+    }
+}
+
+function hoverCountry(countryData) {
+    if (initial) {
+        initial = false;
+        countryInfo.style.opacity = 1;
+    }
+    // 4.76 highest value
+    selectedCountryName.innerHTML = countryData['countryName'] + (countryData['isOther'] ? '*' : '');
+    unit.style.opacity = countryData['isOther'] == true ? 1 : 0;
+
+    const oil = countryData.data[selectedYear].oil;
+    const gas = countryData.data[selectedYear].gas;
+    const coal = countryData.data[selectedYear].coal;
+    const nuclear = countryData.data[selectedYear].nuclear;
+    const water = countryData.data[selectedYear].water;
+    const renewable = countryData.data[selectedYear].renewable;
+
+    oilBar.style.width = `${oil / 4.76 * 100}%`;
+    gasBar.style.width = `${gas / 4.76 * 100}%`;
+    coalBar.style.width = `${coal / 4.76 * 100}%`;
+    nuclearBar.style.width = `${nuclear / 4.76 * 100}%`;
+    waterBar.style.width = `${water / 4.76 * 100}%`;
+    renewableBar.style.width = `${renewable / 4.76 * 100}%`;
+
+    oilBar.style.opacity = ignore.oil ? 0 : 1;
+    gasBar.style.opacity = ignore.gas ? 0 : 1;
+    coalBar.style.opacity = ignore.coal ? 0 : 1;
+    nuclearBar.style.opacity = ignore.nuclear ? 0 : 1;
+    waterBar.style.opacity = ignore.water ? 0 : 1;
+    renewableBar.style.opacity = ignore.renewable ? 0 : 1;
+
+    oilValue.style.opacity = ignore.oil ? 0 : 1;
+    gasValue.style.opacity = ignore.gas ? 0 : 1;
+    coalValue.style.opacity = ignore.coal ? 0 : 1;
+    nuclearValue.style.opacity = ignore.nuclear ? 0 : 1;
+    waterValue.style.opacity = ignore.water ? 0 : 1;
+    renewableValue.style.opacity = ignore.renewable ? 0 : 1;
+
+    oilValue.innerHTML = `${oil == -1 ? '<0.05 EJ' : oil == 0 ? '/' : oil + ' EJ'}`;
+    gasValue.innerHTML = `${gas == -1 ? '<0.05 EJ' : gas == 0 ? '/' : gas + ' EJ'}`;
+    coalValue.innerHTML = `${coal == -1 ? '<0.05 EJ' : coal == 0 ? '/' : coal + ' EJ'}`;
+    nuclearValue.innerHTML = `${nuclear == -1 ? '<0.05 EJ' : nuclear == 0 ? '/' : nuclear + ' EJ'}`;
+    waterValue.innerHTML = `${water == -1 ? '<0.05 EJ' : water == 0 ? '/' : water + ' EJ'}`;
+    renewableValue.innerHTML = `${renewable == -1 ? '<0.05 EJ' : renewable == 0 ? '/' : renewable + ' EJ'}`;
 }

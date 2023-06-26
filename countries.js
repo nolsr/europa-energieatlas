@@ -1,5 +1,6 @@
 const countries = {
     ireland: {
+        countryName: 'Irland',
         residents: 4585.9, 
         bip: 275.567,
         hdi: 0.929,
@@ -34,6 +35,7 @@ const countries = {
         }
     },
     unitedKingdom: {
+        countryName: 'Großbritanien',
         residents: 65341.2,
         bip: 2700000,
         hdi: 0.927,
@@ -68,6 +70,7 @@ const countries = {
         }
     },
     portugal: {
+        countryName: 'Portugal',
         residents: 10341.3,
         bip: 185494,
         hdi: 0.853,
@@ -102,6 +105,7 @@ const countries = {
         }
     },
     spain: {
+        countryName: 'Spanien',
         residents: 46449.6,
         bip: 1327108,
         hdi: 0.895,
@@ -136,6 +140,7 @@ const countries = {
         }
     },
     france: {
+        countryName: 'Frankreich',
         residents: 66661.6,
         bip: 2228568,
         hdi: 0.895,
@@ -170,6 +175,7 @@ const countries = {
         }
     },
     belgium: {
+        countryName: 'Belgien',
         residents: 11289.9,
         bip: 422678,
         hdi: 0.927,
@@ -204,6 +210,7 @@ const countries = {
         }
     },
     netherlands: {
+        countryName: 'Niederland',
         residents: 16979.1,
         bip: 942881,
         hdi: 0.933,
@@ -238,6 +245,7 @@ const countries = {
         }
     },
     switzerland: {
+        countryName: 'Schweiz',
         residents: 8373,
         bip: 687900,
         hdi: 0.956,
@@ -272,6 +280,7 @@ const countries = {
         }
     },
     italy: {
+        countryName: 'Italien',
         residents: 60665.6,
         bip: 1756982,
         hdi: 0.887,
@@ -306,6 +315,7 @@ const countries = {
         }
     },
     germany: {
+        countryName: 'Deutschland',
         residents: 82162.0,
         bip: 3144050,
         hdi: 0.941,
@@ -340,6 +350,7 @@ const countries = {
         }
     },
     denmark: {
+        countryName: 'Dänemark',
         residents: 5707.3,
         bip: 277489,
         hdi: 0.943,
@@ -374,6 +385,7 @@ const countries = {
         }
     },
     norway: {
+        countryName: 'Norwegen',
         residents: 5235,
         bip: 368800,
         hdi: 0.955,
@@ -408,6 +420,7 @@ const countries = {
         }
     },
     sweden: {
+        countryName: 'Schweden',
         residents: 9851,
         bip: 465186,
         hdi: 0.939,
@@ -442,6 +455,7 @@ const countries = {
         }
     },
     finland: {
+        countryName: 'Finnland',
         residents: 5487.3,
         bip: 215773,
         hdi: 0.931,
@@ -476,6 +490,7 @@ const countries = {
         }
     },
     estonia: {
+        countryName: 'Estland',
         residents: 1315.9,
         bip: 21098,
         hdi: 0.885,
@@ -510,6 +525,7 @@ const countries = {
         }
     },
     latvia: {
+        countryName: 'Lettland',
         residents: 1969.0,
         bip: 24926,
         hdi: 0.855,
@@ -544,6 +560,7 @@ const countries = {
         }
     },
     lithuania: {
+        countryName: 'Litauen',
         residents: 2888.6,
         bip: 38.668,
         hdi: 0.868,
@@ -578,6 +595,7 @@ const countries = {
         }
     },
     belorussia: {
+        countryName: 'Belarus',
         residents: 9469,
         bip: 47720,
         hdi: 0.813,
@@ -611,6 +629,7 @@ const countries = {
         }
     },
     poland: {
+        countryName: 'Polen',
         residents: 37967.2,
         bip: 425942,
         hdi: 0.872,
@@ -645,6 +664,7 @@ const countries = {
         }
     },
     czechRepublic: {
+        countryName: 'Tschechien',
         residents: 10553.8,
         bip: 176370,
         hdi: 0.895,
@@ -679,6 +699,7 @@ const countries = {
         }
     },
     austria: {
+        countryName: 'Österreich',
         residents: 85700.5,
         bip: 353297,
         hdi: 0.915,
@@ -713,6 +734,7 @@ const countries = {
         }
     },
     slovenia: {
+        countryName: 'Slowenien',
         residents: 2064.2,
         bip: 40418,
         hdi: 0.910,
@@ -747,6 +769,7 @@ const countries = {
         }
     },
     croatia: {
+        countryName: 'Kroatien',
         residents: 4190.7,
         bip: 46640,
         hdi: 0.848,
@@ -781,6 +804,7 @@ const countries = {
         }
     },
     bosnia: {
+        countryName: 'Bosnien',
         residents: 3481,
         bip: 16910,
         hdi: 0.770,
@@ -815,6 +839,7 @@ const countries = {
         }
     },
     serbia: {
+        countryName: 'Serbien',
         residents: 7058,
         bip: 40690,
         hdi: 0.800,
@@ -849,6 +874,7 @@ const countries = {
         }
     },
     ukraine: {
+        countryName: 'Ukraine',
         residents: 45000,
         bip: 93360,
         hdi: 0.779,
@@ -883,6 +909,7 @@ const countries = {
         }
     },
     slovakia: {
+        countryName: 'Slovakei',
         residents: 5426.3,
         bip: 81154,
         hdi: 0.854,
@@ -917,6 +944,7 @@ const countries = {
         }
     },
     hungary: {
+        countryName: 'Ungarn',
         residents: 9830.5,
         bip: 113731,
         hdi: 0.843,
@@ -951,6 +979,7 @@ const countries = {
         }
     },
     romania: {
+        countryName: 'Rumänien',
         residents: 19760.0,
         bip: 170893,
         hdi: 0.816,
@@ -985,6 +1014,7 @@ const countries = {
         }
     },
     moldavia: {
+        countryName: 'Moldavien',
         residents: 2803,
         bip: 8071,
         hdi: 0.756,
@@ -1019,6 +1049,7 @@ const countries = {
         }
     },
     bulgaria: {
+        countryName: 'Bulgarien',
         residents: 7153.8,
         bip: 48129, //in Millionen
         hdi: 0.809,
@@ -1053,6 +1084,7 @@ const countries = {
         }
     },
     greece: {
+        countryName: 'Griechenland',
         residents: 10793.5,
         bip: 174199,
         hdi: 0.877,
@@ -1087,6 +1119,7 @@ const countries = {
         }
     },
     macedonia: {
+        countryName: 'Mazedonien',
         residents: 2072,
         bip: 10670,
         hdi: 0.767,
@@ -1121,6 +1154,7 @@ const countries = {
         }
     },
     albania: {
+        countryName: 'Albanien',
         residents: 2876,
         bip: 11860,
         hdi: 0.798,
@@ -1155,6 +1189,7 @@ const countries = {
         }
     },
     montenegro: {
+        countryName: 'Montenegro',
         residents: 622303,
         bip: 4377,
         hdi: 0.824,
@@ -1189,9 +1224,10 @@ const countries = {
         }
     },
     kosovo: {
+        countryName: 'Kosovo',
         residents: 1780,
         bip: 6680,
-        hdi: 0,//Keine Angaben WTF
+        hdi: 0.739,
         points: [2798, 2858],
         capital: 2859,
         isOther: true,
@@ -1222,20 +1258,4 @@ const countries = {
             }
         }
     }
-}
-
-// -1 ist das kreuz (< 0.005 Exajoules)
-// 0 ist der Strich bzw keine Angabe
-
-function checkForDuplicates() {
-    const points = {};
-    Object.entries(countries).forEach(c => {
-        c[1].points.forEach(p => {
-            if (!points[p]) {
-                points[p] = true;
-            } else {
-                console.log(p);
-            }
-        })
-    })
 }

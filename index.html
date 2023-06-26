@@ -33,10 +33,24 @@
                                 onclick="toggleCheckbox(this, 'renewable')">Erneuerbar</label></div>
                 </div>
                 <div class="checkers">
-                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked>Einwohner</label>
+                    <div class="checkbox-wrapper">
+                        <label>In Relation setzen:</label>
                     </div>
-                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked>BIP</label></div>
-                    <div class="checkbox-wrapper"><label><input type="checkbox" name="cb" checked>HDI</label></div>
+                    <div class="checkbox-wrapper"><label><input id="residents" type="checkbox" name="cb"
+                                onclick="setInRelation('residents')">Einwohner</label>
+                    </div>
+                    <div class="checkbox-wrapper"><label><input id="bpi" type="checkbox" name="cb"
+                                onclick="setInRelation('bip')">
+                            <div class="tooltip">BIP
+                                <span class="tooltiptext">Bruttoinlandsprodukt</span>
+                            </div>
+                        </label></div>
+                    <div class="checkbox-wrapper"><label><input id="hdi" type="checkbox" name="cb"
+                                onclick="setInRelation('hdi')">
+                            <div class="tooltip">HDI
+                                <span class="tooltiptext">Human Development Index</span>
+                            </div>
+                        </label></div>
                 </div>
             </div>
             <div class="btn-container">
@@ -45,7 +59,45 @@
                 <button id="btn3" class="selected" onclick="selectYear(2021)">2021</button>
             </div>
         </div>
-        <div class="control-wrapper"></div>
+        <div class="control-wrapper" id="countryInfo">
+            <h1 id="selectedCountryName"></h1>
+            <div class="bars">
+                <div class="bar-wrapper">
+                    <div id="oil-bar" class="bar">
+                        <div id="oil-value" class="value"></div>
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <div id="gas-bar" class="bar">
+                        <div id="gas-value" class="value"></div>
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <div id="nuclear-bar" class="bar">
+                        <div id="nuclear-value" class="value"></div>
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <div id="coal-bar" class="bar">
+                        <div id="coal-value" class="value"></div>
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <div id="water-bar" class="bar">
+                        <div id="water-value" class="value"></div>
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <div id="renewable-bar" class="bar">
+                        <div id="renewable-value" class="value"></div>
+                    </div>
+                </div>
+
+                <div id="unit">
+                    *teilt Werte mit anderen Ländern
+                </div>
+            </div>
+        </div>
     </div>
     <div id="impressum">
         <a href="">Impressum</a>

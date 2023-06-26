@@ -100,10 +100,107 @@ h1 {
     z-index: 100;
 }
 
+.bar-wrapper {
+    width: 20rem;
+    height: 22px;
+    margin-bottom: 0.5rem;
+}
+
+.bar {
+    border-radius: 0.15em;
+    height: 100%;
+    width: 0%;
+    transition: all 1s;
+    position: relative;
+}
+
+.value {
+    position: absolute;
+    left: calc(100% + 0.5rem);
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    transition: all 1s;
+    white-space: nowrap;
+}
+
+#countryInfo {
+    opacity: 0;
+    transition: all 1s;
+}
+
+#unit {
+    color: white;
+    transition: all 1s;
+    opacity: 0;
+    font-size: 0.8rem;
+}
+
+#oil-bar {
+    background-color: #724dae;
+}
+#gas-bar {
+    background-color: #e72061;
+}
+#coal-bar {
+    background-color: #f06d3d;
+}
+#nuclear-bar {
+    background-color: #e3cf00;
+}
+#water-bar {
+    background-color: #1cc0c9;
+}
+#renewable-bar {
+    background-color: #57d64a;
+}
+
 /* CONTROLS */
 
 .checkbox-wrapper {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
+    height: 1.4rem;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: -5px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: white;
+    color: #1a162e;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    padding: 0.5rem 0.5rem;
+    width: 15rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -7.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
 .checkbox-wrapper label {
@@ -180,7 +277,7 @@ h1 {
     margin-right: 1rem;
 }
 
-.input:checked {
+input:checked {
     background: white border-box;
 }
 
@@ -199,15 +296,11 @@ h1 {
 
 .control-wrapper {
     width: 100%;
-    height: 15rem;
+    height: auto;
     border: 1px solid white;
     border-width: 0 0 0 1px;
     padding: 0.7rem;
     padding-left: 1.5rem;
-}
-
-.control-wrapper:first-child {
-    height: auto;
 }
 
 .checkers-container {
