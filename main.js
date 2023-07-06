@@ -2,7 +2,7 @@ const selected = {};
 let map, btn1, btn2, btn3, residents, bpi, hdi, selectedCountryName,
     oilBar, gasBar, coalBar, nuclearBar, waterBar, renewableBar,
     lastHovered, oilValue, gasValue, nuclearValue, coalValue, waterValue,
-    renewableValue, countryInfo, unit;
+    renewableValue, countryInfo, unit, relResidents, relBip, relHdi;
 let initial = true;
 
 const cOil = '#724DAE';
@@ -48,27 +48,30 @@ document.addEventListener("DOMContentLoaded", () => {
     renewableValue = document.getElementById('renewable-value');
     countryInfo = document.getElementById('countryInfo');
     unit = document.getElementById('unit');
+    relResidents = document.getElementById('relResidents');
+    relBip = document.getElementById('relBip');
+    relHdi = document.getElementById('relHdi');
     generateMapNodes(() => {
         loadScript('./countries.js', function () {
             loadExport();
-            colorCountries(selectedYear);
+            colorCountries();
         });
     });
 });
 
-function loadScript(url, callback) {
+function loadScript(url, _callback) {
     var script = document.createElement("script")
     script.type = "text/javascript";
     if (script.readyState) {
         script.onreadystatechange = function () {
             if (script.readyState === "loaded" || script.readyState === "complete") {
                 script.onreadystatechange = null;
-                callback();
+                _callback();
             }
         };
     } else {
         script.onload = function () {
-            callback();
+            _callback();
         };
     }
 
@@ -117,17 +120,22 @@ function loadExport() {
     }
 }
 
-function colorCountries(year, delay = true) {
+function colorCountries(delay = true) {
     for (let i = 0; i < Object.keys(countries).length; i++) {
-        debounce(colorCountry, delay ? 200 * (i + 1) : 0)(Object.values(countries)[i], year, delay);
+        debounce(colorCountry, delay ? 200 * (i + 1) : 0)(Object.values(countries)[i], selectedYear, delay);
     }
 }
 
 function colorCountry(countryData, year, shortAnim) {
-    const c = getCountryColor(countryData.data[year]);
-    const size = calcCapitalSize(countryData.data[year]);
+    let c = getCountryColor(countryData.data[year]);
+    let size = calcCapitalSize(countryData.data[year], countryData);
     const capitalElement = map.childNodes[countryData.capital].childNodes[0];
     const animName = shortAnim ? 'shortAnim' : 'anim';
+
+    if (inRelation != null && countryData.isOther) {
+        c = 'grey';
+        size = 15;
+    }
 
     capitalElement.style.width = size + 'px';
     capitalElement.style.height = size + 'px';
@@ -156,9 +164,17 @@ function colorCountry(countryData, year, shortAnim) {
 
 const debounce = (fn, delay, shortAnim) => { let timeoutId; return function () { clearTimeout(timeoutId); timeoutId = setTimeout(() => { fn.apply(this, arguments); }, delay, shortAnim); }; };
 
-function calcCapitalSize(countryData) {
-    const consumption = getTotalConsumption(structuredClone(countryData));
-    return 15 + (11 * consumption);
+function calcCapitalSize(consumptionData, countryData) {
+    const consumption = getTotalConsumption(structuredClone(consumptionData));
+    let size = 11 * consumption;
+    if (inRelation == 'residents') {
+        size = consumption / countryData.residents * 250000;
+    } else if (inRelation == 'bip') {
+        size = consumption / countryData.bip * 3000000;
+    } else if (inRelation == 'hdi') {
+        size = consumption / countryData.hdi * 12;
+    }
+    return 15 + size;
 }
 
 function getTotalConsumption(data) {
@@ -211,7 +227,7 @@ function getCountryColor(data) {
 
 function toggleCheckbox(checkbox, key) {
     ignore[key] = !checkbox.checked;
-    colorCountries(selectedYear, false);
+    colorCountries(false);
     if (lastHovered) {
         hoverCountry(countries[lastHovered]);
     }
@@ -219,7 +235,7 @@ function toggleCheckbox(checkbox, key) {
 
 function selectYear(year) {
     selectedYear = year;
-    colorCountries(selectedYear, false);
+    colorCountries(false);
     if (lastHovered) {
         hoverCountry(countries[lastHovered]);
     }
@@ -244,6 +260,11 @@ function selectYear(year) {
 
 }
 function setInRelation(rel) {
+    if (inRelation == rel) {
+        inRelation = null;
+        colorCountries(false);
+        return;
+    }
     inRelation = rel;
     switch (rel) {
         case 'residents':
@@ -259,6 +280,7 @@ function setInRelation(rel) {
             bpi.checked = false;
             break;
     }
+    colorCountries(false);
 }
 
 function hoverCountry(countryData) {
@@ -304,4 +326,8 @@ function hoverCountry(countryData) {
     nuclearValue.innerHTML = `${nuclear == -1 ? '<0.05 EJ' : nuclear == 0 ? '-' : nuclear + ' EJ'}`;
     waterValue.innerHTML = `${water == -1 ? '<0.05 EJ' : water == 0 ? '-' : water + ' EJ'}`;
     renewableValue.innerHTML = `${renewable == -1 ? '<0.05 EJ' : renewable == 0 ? '-' : renewable + ' EJ'}`;
+
+    relResidents.innerHTML = (countryData.residents * 1000).toLocaleString("en-US");
+    relBip.innerHTML = (countryData.bip).toLocaleString("en-US") + ' Mio. €';
+    relHdi.innerHTML = countryData.hdi;
 }

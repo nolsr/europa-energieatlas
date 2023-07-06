@@ -2,7 +2,7 @@ const countries = {
     ireland: {
         countryName: 'Irland',
         residents: 4585.9, 
-        bip: 275.567,
+        bip: 275567,
         hdi: 0.929,
         points: [1271, 1272, 1329, 1330, 1331, 1389, 1390, 1391, 1392, 1449, 1450, 1451, 1508, 1509, 1510, 1511, 1512, 1568, 1569, 1570, 1571],
         capital: 1452,
@@ -559,41 +559,6 @@ const countries = {
             }
         }
     },
-    lithuania: {
-        countryName: 'Litauen',
-        residents: 2888.6,
-        bip: 38.668,
-        hdi: 0.868,
-        points: [1538, 1539, 1540, 1541, 1542, 1543, 1599, 1600, 1601, 1602, 1603, 1658, 1659, 1660, 1661, 1662, 1721],
-        capital: 1663,
-        isOther: false,
-        data: {
-            2011: {
-                oil: 0.11,
-                gas: 0.11,
-                coal: 0.01,
-                nuclear: 0,
-                water: -1,
-                renewable: 0.01
-            },
-            2016: {
-                oil: 0.13,
-                gas: 0.08,
-                coal: 0.01,
-                nuclear: 0,
-                water: -1,
-                renewable: 0.02
-            },
-            2021: {
-                oil: 0.14,
-                gas: 0.08,
-                coal: 0.01,
-                nuclear: 0,
-                water: -1,
-                renewable: 0.03
-            }
-        }
-    },
     belorussia: {
         countryName: 'Belarus',
         residents: 9469,
@@ -624,6 +589,41 @@ const countries = {
                 coal: 0.31,
                 nuclear: 0,
                 water: 0.37,
+                renewable: 0.03
+            }
+        }
+    },
+    lithuania: {
+        countryName: 'Litauen',
+        residents: 2888.6,
+        bip: 38668,
+        hdi: 0.868,
+        points: [1538, 1539, 1540, 1541, 1542, 1543, 1599, 1600, 1601, 1602, 1603, 1658, 1659, 1660, 1661, 1662, 1721],
+        capital: 1663,
+        isOther: false,
+        data: {
+            2011: {
+                oil: 0.11,
+                gas: 0.11,
+                coal: 0.01,
+                nuclear: 0,
+                water: -1,
+                renewable: 0.01
+            },
+            2016: {
+                oil: 0.13,
+                gas: 0.08,
+                coal: 0.01,
+                nuclear: 0,
+                water: -1,
+                renewable: 0.02
+            },
+            2021: {
+                oil: 0.14,
+                gas: 0.08,
+                coal: 0.01,
+                nuclear: 0,
+                water: -1,
                 renewable: 0.03
             }
         }
@@ -700,7 +700,7 @@ const countries = {
     },
     austria: {
         countryName: 'Österreich',
-        residents: 85700.5,
+        residents: 8700.5,
         bip: 353297,
         hdi: 0.915,
         points: [2251, 2252, 2253, 2310, 2311, 2312, 2367, 2368, 2314, 2369, 2370, 2371, 2372, 2373, 2430, 2431],
@@ -1190,7 +1190,7 @@ const countries = {
     },
     montenegro: {
         countryName: 'Montenegro',
-        residents: 622303,
+        residents: 622.303,
         bip: 4377,
         hdi: 0.824,
         points: [2856],

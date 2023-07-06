@@ -25,9 +25,9 @@ body {
 #control-panel {
     position: absolute;
     top: calc(10vh - 20px);
-    right: 6vw;
+    right: 2vw;
     height: calc(80vh + 40px);
-    width: 25vw;
+    width: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -98,6 +98,10 @@ h1 {
     transition: "opacity" 0.2s 0;
     opacity: 0.8;
     z-index: 100;
+}
+
+.bars {
+    position: relative;
 }
 
 .bar-wrapper {
@@ -348,4 +352,25 @@ button:hover {
     font-weight: bold;
     color: #1a162e;
     background-color: white;
+}
+
+.relations {
+    position: absolute;
+    right: 3rem;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+}
+
+.relation {
+    width: 8rem;
+    height: 22px;
+    margin-bottom: 0.5rem;
+    text-align: right;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }

@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <!-- <img src="./assets/map.png" id="bild" alt=""> -->
     <img id="logo" src="./assets/logo.svg" alt="Europa Energieatlas">
     <div id="map-container"></div>
 
@@ -37,19 +36,13 @@
                         <label>In Relation setzen:</label>
                     </div>
                     <div class="checkbox-wrapper"><label><input id="residents" type="checkbox" name="cb"
-                                onclick="setInRelation('residents')">Einwohner</label>
+                                onclick="setInRelation('residents')">Einwohnerzahl</label>
                     </div>
                     <div class="checkbox-wrapper"><label><input id="bpi" type="checkbox" name="cb"
-                                onclick="setInRelation('bip')">
-                            <div class="tooltip">BIP
-                                <span class="tooltiptext">Bruttoinlandsprodukt</span>
-                            </div>
+                                onclick="setInRelation('bip')">Bruttoinlandsprodukt
                         </label></div>
                     <div class="checkbox-wrapper"><label><input id="hdi" type="checkbox" name="cb"
-                                onclick="setInRelation('hdi')">
-                            <div class="tooltip">HDI
-                                <span class="tooltiptext">Human Development Index</span>
-                            </div>
+                                onclick="setInRelation('hdi')">Human Development Index
                         </label></div>
                 </div>
             </div>
@@ -96,11 +89,18 @@
                 <div id="unit">
                     *teilt Werte mit anderen Ländern
                 </div>
+
+                <div class="relations">
+                    <div class="relation" style="font-weight: bold;">Einwohner:</div>
+                    <div id="relResidents" class="relation"></div>
+                    <div class="relation" style="font-weight: bold;">BIP:</div>
+                    <div id="relBip" class="relation"></div>
+                    <div class="relation" style="font-weight: bold;">HDI:</div>
+                    <div id="relHdi" class="relation"></div>
+                    <!-- <div style="opacity: 0;">a</div> -->
+                </div>
             </div>
         </div>
-    </div>
-    <div id="impressum">
-        <a href="">Impressum</a>
     </div>
 </body>
 
