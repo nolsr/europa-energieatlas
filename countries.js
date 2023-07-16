@@ -35,7 +35,7 @@ const countries = {
         }
     },
     unitedKingdom: {
-        countryName: 'Großbritanien',
+        countryName: 'Großbritannien',
         residents: 65341.2,
         bip: 2700000,
         hdi: 0.927,
@@ -210,7 +210,7 @@ const countries = {
         }
     },
     netherlands: {
-        countryName: 'Niederland',
+        countryName: 'Niederlande',
         residents: 16979.1,
         bip: 942881,
         hdi: 0.933,
@@ -1014,7 +1014,7 @@ const countries = {
         }
     },
     moldavia: {
-        countryName: 'Moldavien',
+        countryName: 'Moldawien',
         residents: 2803,
         bip: 8071,
         hdi: 0.756,
