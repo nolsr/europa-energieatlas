@@ -141,6 +141,15 @@ h1 {
     font-size: 0.8rem;
 }
 
+#relationDeaktivate {
+    color: white;
+    transition: all 1s;
+    opacity: 0;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    margin-top: 7.5px;
+}
+
 #oil-bar {
     background-color: #724dae;
 }
