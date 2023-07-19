@@ -1014,7 +1014,7 @@ const countries = {
         }
     },
     moldavia: {
-        countryName: 'Moldawien',
+        countryName: 'Moldau',
         residents: 2803,
         bip: 8071,
         hdi: 0.756,
