@@ -291,11 +291,7 @@ function hoverCountry(countryData) {
 
     selectedCountryName.innerHTML = countryData['countryName'] + (countryData['isOther'] ? '*' : '');
     unit.style.opacity = countryData['isOther'] == true ? 1 : 0;
-    if(countryData['isOther'] == true && bpi.checked == true || hdi.checked == true || residents.checked == true ){
-        relationDeaktivate.style.opacity = 1
-    } else {
-        relationDeaktivate.style.opacity = 0
-    }
+    relationDeaktivate.style.opacity = countryData['isOther'] == (true && bpi.checked == true || hdi.checked == true || residents.checked == true) ? 1 : 0;
 
     const oil = countryData.data[selectedYear].oil;
     const gas = countryData.data[selectedYear].gas;
@@ -335,12 +331,4 @@ function hoverCountry(countryData) {
     relResidents.innerHTML = (countryData.residents * 1000).toLocaleString("en-US");
     relBip.innerHTML = (countryData.bip).toLocaleString("en-US") + ' Mio. €';
     relHdi.innerHTML = countryData.hdi;
-}
-
-function relationCountryDeaktivate(countryData){
-    if(countryData['isOther'] == true && bpi.checked == true || hdi.checked == true || residents.checked == false ){
-        relationDeaktivate.style.opacity = 1
-    } else {
-        relationDeaktivate.style.opacity = 0
-    }
 }
