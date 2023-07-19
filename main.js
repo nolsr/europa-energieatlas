@@ -291,7 +291,8 @@ function hoverCountry(countryData) {
 
     selectedCountryName.innerHTML = countryData['countryName'] + (countryData['isOther'] ? '*' : '');
     unit.style.opacity = countryData['isOther'] == true ? 1 : 0;
-    relationDeaktivate.style.opacity = countryData['isOther'] == (true && bpi.checked == true || hdi.checked == true || residents.checked == true) ? 1 : 0;
+    relationDeaktivate.style.opacity = countryData['isOther'] == true &&(bpi.checked == true || hdi.checked == true || residents.checked == true)? 1 : 0;
+
 
     const oil = countryData.data[selectedYear].oil;
     const gas = countryData.data[selectedYear].gas;
